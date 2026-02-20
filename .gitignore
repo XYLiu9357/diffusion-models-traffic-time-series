@@ -1,2 +1,4 @@
 __pycache__/
-data/
+data/*.h5
+data/*.pkl
+data/*.npz

@@ -1,7 +1,8 @@
-default: run
+default: run-pipeline
 
-run: format
+run-pipeline: format
+	python -m scripts.base_pipeline
 
 format:
-	python -m isort *.py
-	python -m black *.py
+	find . -name "*.py" -not -path "./venv/*" -not -path "./.env/*" | xargs isort
+	find . -name "*.py" -not -path "./venv/*" -not -path "./.env/*" | xargs black
