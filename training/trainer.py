@@ -1,4 +1,5 @@
 import logging
+import pathlib
 
 import matplotlib.pyplot as plt
 import torch
@@ -124,9 +125,17 @@ class DiffusionTrainer:
 
         return avg_val_loss
 
-    def train(self, num_epochs: int = 100, validate_every: int = 5):
+    def train(
+        self,
+        num_epochs: int = 100,
+        validate_every: int = 5,
+        save_every=10,
+        checkpoint_dir="checkpoints",
+    ):
         """Full training loop."""
         logger.info(f"Starting training for {num_epochs} epochs")
+        checkpoint_dir = pathlib.Path(checkpoint_dir)
+        checkpoint_dir.mkdir(exist_ok=True)
 
         for epoch in range(num_epochs):
             train_loss = self.train_epoch()
@@ -139,6 +148,10 @@ class DiffusionTrainer:
             else:
                 logger.info(f"Epoch {epoch}: train_loss={train_loss:.6f}")
 
+            if (epoch + 1) % save_every == 0:
+                checkpoint_path = checkpoint_dir / f"epoch_{epoch}.pth"
+                torch.save(self.model.state_dict(), checkpoint_path)
+                logger.info(f"Checkpoint saved at {checkpoint_path}")
         logger.info("Training complete!")
 
     def plot_losses(self):

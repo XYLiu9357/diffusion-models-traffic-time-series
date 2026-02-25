@@ -26,6 +26,7 @@ class SpatioTemporalUNet(nn.Module):
         self,
         adj_mx: np.ndarray,
         in_channels: int = 1,
+        out_channels: int = 1,
         time_steps: int = 12,
         num_sensors: int = 207,
         hidden_dims: List[int] = [64, 128, 256],
@@ -124,7 +125,7 @@ class SpatioTemporalUNet(nn.Module):
 
         # Output projection: back to original feature dimension
         self.output_proj = nn.Conv2d(
-            hidden_dims[0], in_channels, kernel_size=(3, 3), padding=(1, 1)
+            hidden_dims[0], out_channels, kernel_size=(3, 3), padding=(1, 1)
         )
 
         # Time embedding

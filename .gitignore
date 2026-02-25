@@ -2,3 +2,5 @@ __pycache__/
 data/*.h5
 data/*.pkl
 data/*.npz
+checkpoints/
+*.pth
