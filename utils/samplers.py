@@ -87,6 +87,13 @@ def impute_csdi(model, scheduler, corrupted, mask, num_steps=None, n_samples=1):
         # Re-apply observed values
         x = x * (1 - mask_multi) + corrupted_multi * mask_multi
 
+        # After x = x * (1 - mask_multi) + corrupted_multi * mask_multi
+        if t == timesteps[0]:  # only check at first step to avoid flooding
+            obs_diff = (x - corrupted_multi).abs() * mask_multi
+            max_diff = obs_diff.max().item()
+            if max_diff > 1e-5:
+                print(f"WARNING: Observed values changed by {max_diff}")
+
     # Reshape to [n_samples, B, T, N, F]
     return x.view(n_samples, B, T, N, F)
 

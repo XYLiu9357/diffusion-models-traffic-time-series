@@ -4,3 +4,4 @@ data/*.pkl
 data/*.npz
 checkpoints/
 *.pth
+*.png

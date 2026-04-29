@@ -23,6 +23,17 @@ Evaluating: 100%|█████████████████████
 2026-02-24 12:30:05,762 - __main__ - INFO - Plotting example 0...
 2026-02-24 12:30:11,675 - __main__ - INFO - Plotting example 1...
 
+
+0.40 corruption rate.
+
+Evaluating: 100%|███████████████████████████████████████████████████████████████████| 427/427 [1:01:34<00:00,  8.65s/it]
+2026-03-11 09:38:24,816 - __main__ - INFO - Test MAE: 0.6416 (normalized scale)
+2026-03-11 09:38:24,817 - __main__ - INFO - Test RMSE: 0.8344 (normalized scale)
+2026-03-11 09:38:24,817 - __main__ - INFO - Average std: 19.19 mph
+2026-03-11 09:38:24,817 - __main__ - INFO - Approx. MAE in mph: 12.31
+2026-03-11 09:38:24,817 - __main__ - INFO - Approx. RMSE in mph: 16.01
+2026-03-11 09:38:24,817 - __main__ - INFO - Plotting example 0...
+
 # CSDI Forecast
 
 2026-02-24 16:15:03,752 - numexpr.utils - INFO - NumExpr defaulting to 10 threads.
@@ -68,3 +79,21 @@ Evaluating: 100%|█████████████████████
 2026-02-25 05:50:02,105 - __main__ - INFO - CSDI (forecast)           MAE: 1.0738 (norm), RMSE: 1.3045 (norm)
 2026-02-25 05:50:02,105 - __main__ - INFO - CSDI (forecast)           MAE: 20.60 mph, RMSE: 25.03 mph
 2026-02-25 05:50:02,105 - __main__ - INFO - ============================================================
+
+## Impute
+
+0.5 corruption rate
+
+2026-03-11 12:41:55,918 - __main__ - INFO - ============================================================
+2026-03-11 12:41:55,919 - __main__ - INFO - Results for imputation task:
+2026-03-11 12:41:55,919 - __main__ - INFO - Mean imputation           MAE: 0.7968 (norm), RMSE: 0.9654 (norm)
+2026-03-11 12:41:55,919 - __main__ - INFO - Mean imputation           MAE: 15.29 mph, RMSE: 18.52 mph
+2026-03-11 12:41:55,919 - __main__ - INFO - Forward fill              MAE: 0.1594 (norm), RMSE: 0.3257 (norm)
+2026-03-11 12:41:55,919 - __main__ - INFO - Forward fill              MAE: 3.06 mph, RMSE: 6.25 mph
+2026-03-11 12:41:55,919 - __main__ - INFO - Linear interpolation      MAE: 0.1610 (norm), RMSE: 0.3293 (norm)
+2026-03-11 12:41:55,919 - __main__ - INFO - Linear interpolation      MAE: 3.09 mph, RMSE: 6.32 mph
+2026-03-11 12:41:55,919 - __main__ - INFO - CSDI (imputation)         MAE: 0.5992 (norm), RMSE: 0.7620 (norm)
+2026-03-11 12:41:55,919 - __main__ - INFO - CSDI (imputation)         MAE: 11.49 mph, RMSE: 14.62 mph
+2026-03-11 12:41:55,919 - __main__ - INFO - ============================================================
+
+
