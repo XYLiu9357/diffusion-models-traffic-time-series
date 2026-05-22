@@ -10,7 +10,7 @@ Experiments on the METR-LA traffic dataset reveal a striking contrast: CSDI with
 
 Our results demonstrate that diffusion models offer a powerful unified approach for traffic imputation while highlighting the need for improved forecasting designs and more comprehensive baselines in future work.
 
-For more details, see the full paper [here](diffusion_models_for_urban_traffic_time_series.pdf).
+For more details, see the full paper [here](docs/diffusion_models_for_urban_traffic_time_series.pdf).
 
 ## Dependencies
 
